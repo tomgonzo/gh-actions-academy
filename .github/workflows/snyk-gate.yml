@@ -34,3 +34,14 @@ jobs:
         uses: github/codeql-action/upload-sarif@v1
         with:
           sarif_file: snyk.sarif
+  iac-security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Snyk IaC Test
+        uses: snyk/actions/iac@master
+        env:
+          SNYK_TOKEN: ${{ Secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high
+        
