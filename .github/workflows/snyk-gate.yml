@@ -14,3 +14,20 @@ jobs:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         args: --severity-threshold=high
+  container-security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the Docker Image
+        run: docker build -t goof-image .
+      - name: Snyk Container Test
+        uses: snyk/actions/docker@master
+        env:
+          SNYK_TOKEN: ${{ Secrets.SNYK_TOKEN }}
+        with:
+          image: goof-image
+          args: --file=Dockerfile
+      - name: Upload Container Scan results to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: snyk.sarif
