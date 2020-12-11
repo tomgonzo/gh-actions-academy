@@ -6,13 +6,13 @@ ignore:
     - tap > nyc > caching-transform > mkdirp > minimist:
         reason: no fix available
         expires: '2021-01-10T11:16:58.173Z'
-      snyk > update-notifier > latest-version > package-json > registry-auth-token > rc > minimist:
-        reason: ignoring
-        expires: '2021-01-10T11:23:02.407Z'
     - tap > nyc > istanbul-reports > handlebars > optimist > minimist:
         reason: no fix available
         expires: '2021-01-10T11:16:58.173Z'
-      snyk > update-notifier > latest-version > package-json > registry-url > rc > minimist:
+    - snyk > update-notifier > latest-version > package-json > registry-auth-token > rc > minimist:
+        reason: ignoring
+        expires: '2021-01-10T11:23:02.407Z'
+    - snyk > update-notifier > latest-version > package-json > registry-url > rc > minimist:
         reason: ignoring
         expires: '2021-01-10T11:23:02.407Z'
   SNYK-JS-SETVALUE-450213:
@@ -79,25 +79,25 @@ ignore:
   'npm:ejs:20161128':
     - ejs-locals > ejs:
         reason: no fix available
-        expires: '2021-01-10T11:16:58.175Z'
+        expires: '2021-01-10T13:00:35.080Z'
   'npm:ejs:20161130':
     - ejs-locals > ejs:
         reason: no fix available
-        expires: '2021-01-10T11:16:58.175Z'
+        expires: '2021-01-10T13:00:35.080Z'
   'npm:ejs:20161130-1':
     - ejs-locals > ejs:
         reason: no fix available
-        expires: '2021-01-10T11:16:58.175Z'
+        expires: '2021-01-10T13:00:35.080Z'
   'snyk:lic:npm:goof:GPL-2.0':
     - '':
         reason: GPL license exception approved
-        expires: '2021-01-10T11:16:58.175Z'
+        expires: '2021-01-10T13:00:35.080Z'
   'npm:braces:20180219':
     - dustjs-linkedin > chokidar > anymatch > micromatch > braces:
         reason: no fix available
-        expires: '2021-01-10T11:23:02.407Z'
+        expires: '2021-01-10T13:00:35.080Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:ms:20151024':
     - humanize-ms > ms:
-        patched: '2020-12-11T11:13:19.886Z'
+        patched: '2020-12-11T12:59:20.536Z'

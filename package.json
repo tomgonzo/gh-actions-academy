@@ -5,14 +5,12 @@
   "homepage": "https://snyk.io/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Snyk/snyk-todo-list-demo-app/"
+    "url": "https://github.com/Snyk/goof/"
   },
   "scripts": {
     "start": "node app.js",
     "build": "browserify -r jquery > public/js/bundle.js",
-    "cleanup": "mongo express-todo --eval 'db.todos.remove({});'",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "cleanup": "mongo express-todo --eval 'db.todos.remove({});'"
   },
   "engines": {
     "node": "6.14.1"
