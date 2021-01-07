@@ -27,14 +27,22 @@ jobs:
       - uses: actions/checkout@v2
       - name: Setup up Docker Buildx
         uses: docker/setup-buildx-action@v1
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v1 
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and Push Docker Image
+      - name: Build Docker Image
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          push: true
-          tags: ${{ Secrets.DOCKERHUB_USERNAME }}/goof:develop
+          push: false
+          load: true
+          tags: goof:develop
+      - name: Snyk Container Test
+        continue-on-error: true
+        uses: snyk/actions/docker@master
+        env:
+          SNYK_TOKEN: ${{ Secrets.SNYK_TOKEN }}
+        with:
+          image: goof:develop
+          args: --file=Dockerfile
+      - name: Upload Container Scan results to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: snyk.sarif
