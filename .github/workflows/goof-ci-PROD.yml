@@ -4,8 +4,6 @@
 name: Node.js CI task for PROD branch
 
 on:
-  push:
-    branches: [ PROD ]
   pull_request:
     branches: [ PROD ]
 
