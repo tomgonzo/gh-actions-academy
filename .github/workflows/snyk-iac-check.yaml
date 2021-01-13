@@ -1,5 +1,8 @@
 name: Test Infrastructure as Code with Snyk
-on: push
+on:
+  push:
+    paths: 
+      - '**.yaml'
 jobs:
   snyk:
     runs-on: ubuntu-latest
