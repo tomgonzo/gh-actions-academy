@@ -24,4 +24,4 @@ jobs:
           SNYK_TOKEN: ${{ Secrets.SNYK_TOKEN }}
         with:
           file: goof-deployment.yaml goof-service.yaml
-          args: --severity-threshold=high
+          args: --severity-threshold=medium
