@@ -4,6 +4,8 @@ metadata:
   name: goof
 spec:
   type: LoadBalancer
+  loadBalancerSourceRanges:
+    - "143.231.0.0/16"
   ports:
     - protocol: TCP
       port: 80
