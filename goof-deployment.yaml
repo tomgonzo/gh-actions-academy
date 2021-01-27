@@ -15,7 +15,7 @@ spec:
         tier: frontend
     spec:
       containers:
-        - name: goof
+        - name: goof-app
           image: goof:PROD
           ports:
             - containerPort: 3001
