@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app: goof-app
+        app: goof
         tier: frontend
     spec:
       containers:
