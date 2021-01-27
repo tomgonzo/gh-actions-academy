@@ -6,6 +6,7 @@ on:
 jobs:
   snyk:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v2
       - name: Check configuration files for security issues with Snyk
