@@ -16,7 +16,7 @@ spec:
       targetPort: 9229
       name: "debug"
   selector:
-    app: goof
+    app: goof-app
     tier: frontend
 ---
 apiVersion: v1
